@@ -1,0 +1,66 @@
+<div *ngIf="educator" class="container">
+  <!-- Sección de Presentación -->
+  <section class="presentation">
+    <h1>{{ educator.name }}</h1>
+    <h2>{{ educator.area }}</h2>
+    <div class="profile">
+        <!-- En esta sección, la imagen debería estar centrada por encima del texto de presentación -->
+        <img [src]="educator.profilePic || '../../assets/LogoSinFondo.png'" alt="Profile Picture" class="profile-pic">
+        <h3>{{ educator.personalDescription }}</h3>
+    </div>
+  </section>
+
+  <mat-divider></mat-divider>
+
+  <!-- Sección de Experiencia -->
+  <section class="experience">
+    <!-- Dividir en 2 columnas, donde a la derecha muestre imágenes y a la izquierda el texto. -->
+    <div class="experience-content">
+      <div class="experience-text">
+        <h1>Experiencia</h1>
+        <ul>
+          <li *ngFor="let exp of educator.experience">{{ exp }}</li>
+        </ul>
+        <h1>Títulos y Certificaciones</h1>
+        <ul>
+          <li *ngFor="let title of educator.oficialTitles">{{ title }}</li>
+          <li *ngFor="let cert of educator.certifications">{{ cert }}</li>
+        </ul>
+      </div>
+      <div class="experience-images">
+        <img *ngFor="let pic of educator.optionalPics; let i = index" [src]="pic" [ngStyle]="{'display': currentImageIndex === i ? 'block' : 'none'}" class="experience-pic">
+      </div>
+    </div>
+  </section>
+
+  <mat-divider></mat-divider>
+
+  <mat-divider></mat-divider>
+
+  <!-- Sección de Proyectos y Artículos -->
+  <section class="projects-articles">
+    <h1>Proyectos y Artículos</h1>
+    <div *ngFor="let article of educator.articles" class="card">
+      <img [src]="article.articlePicture || '../../assets/LogoSinFondo.png'" alt="{{ article.articleName }}" class="card-img">
+      <div class="card-content">
+        <h4>{{ article.articleName }}</h4>
+        <p>{{ article.articleDescription }}</p>
+        <a [href]="article.articleLink" target="_blank">Leer más</a>
+      </div>
+    </div>
+  </section>
+
+  <mat-divider></mat-divider>
+
+  <!-- Sección de Comunidad -->
+  <section class="community">
+    <h1>Mensajes de la Comunidad</h1>
+    <div *ngFor="let message of educator.communityMessages" class="card">
+      <div class="card-content">
+        <h4>{{ message.messageAutor }}</h4>
+        <p><em>{{ message.messageRelationship }}</em></p>
+        <p>{{ message.messageContent }}</p>
+      </div>
+    </div>
+  </section>
+</div>

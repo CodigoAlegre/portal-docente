@@ -1,0 +1,7 @@
+<mat-toolbar color="primary" class="footer-toolbar">
+    <img src="../../assets/LogoSinFondo.png" alt="Logo" class="logo">
+    <span class="footer-title">Educación en Acción</span>
+    <span *ngIf="educator" class="footer-contact">
+      Contacto: {{ educator.name }} - {{ educator.email }}
+    </span>
+  </mat-toolbar>

@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Portal de Educadores</h1>
+    <mat-form-field appearance="outline" class="search-bar">
+      <mat-label>Buscar Educador</mat-label>
+      <input matInput [(ngModel)]="searchTerm" (ngModelChange)="filterEducators()" placeholder="Nombre del educador">
+    </mat-form-field>
+  
+    <mat-list>
+      <ng-container *ngFor="let educator of filteredEducators">
+        <mat-list-item class="clickable-item" (click)="goToDetail(educator.name)">
+          <h3 matListItemTitle>{{ educator.name }}</h3>
+          <p matListItemLine>{{ educator.area }}</p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </mat-list>
+  </div>

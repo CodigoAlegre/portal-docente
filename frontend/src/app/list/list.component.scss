@@ -1,0 +1,24 @@
+.container {
+  padding: 20px;
+  min-height: 500px;
+  max-height: 700px;
+  flex: 1; /* Esto asegura que el contenedor ocupe el espacio restante */
+}
+
+  
+  .search-bar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  mat-list-item {
+    margin: 10px;
+  }
+
+  .clickable-item {
+    cursor: pointer;
+  }
+  
+  .clickable-item:hover {
+    background-color: #f5f5f5;
+  }
