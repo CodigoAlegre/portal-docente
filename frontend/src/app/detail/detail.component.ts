@@ -23,6 +23,7 @@ export class DetailComponent implements OnInit {
     const name = this.route.snapshot.paramMap.get('name') || '';
     this.educatorsService.getEducatorByName(name).subscribe(educator => this.educator = educator);
     this.startImageCarousel();
+    console.log(this.educator);
   }
 
   startImageCarousel() {

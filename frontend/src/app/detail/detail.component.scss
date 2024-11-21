@@ -54,6 +54,9 @@
   border-radius: 20%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: none;
+ // height: auto; /* Asegura que la altura se ajuste automáticamente */
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionarla */
+  object-position: center; /* Centra la imagen dentro del contenedor */
 }
 
 .projects-articles, .community {
@@ -99,10 +102,18 @@
     align-items: center;
   }
 
-  .experience-text, .experience-images {
+  .experience-text {
     width: 100%; 
     min-width: unset; 
   }
+
+  .experience-images {
+    width: 100%;
+    min-width: unset;
+    height: auto; /* Asegura que la altura se ajuste automáticamente */
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor sin distorsionarla */
+    object-position: center; /* Centra la imagen dentro del contenedor */
+}
 
   .card {
     flex-direction: column; 
